@@ -22,11 +22,11 @@ The glove works via the readings from the flex sensors, which are just variable 
 
 I wrote a C program in the Arduino IDE which will take the sensor values from each sensor, concatenate them into a string, and output that string to the serial monitor each second.
 
-Whilst the C program is running on the microcontroller, I have an Express.js server running with SerialPort which gets the data coming from a specific USB Port and the Serial Monitor on my machine. I print these values to the terminal simultaneously to ensure they are the same values from the serial port.
+While the C program is running on the microcontroller, I have an Express.js server running which gets the data coming from a specific USB Port and the Serial Monitor on my machine, using SerialPort. I print these values to the terminal simultaneously to ensure they are the same values from the serial port.
 
-I also utilize a web socket in the server which allows me to get the data from the server, store it in an object, and print it to the client via a middleware JS file which holds the serialport data during the session.
+I store that data in an object, and print it to the client via a middleware JS file which holds the serialport data during the session.
 
-In the animation file, I call on the socket.io object and access the sensor data. I split the string at the comma and take each fingers data value by using specific index values of the newly made array for each finger. From here I can control a certain aspect of the animation with how much each finger is bent.
+In the animation file, I call on the socket.io object and access the sensor data. I split the string at the comma and take each finger's data value by using index values of the newly made array for each finger. From here I can control a certain aspect of the animation with how much each finger is bent.
 
 ## How to Run
 
